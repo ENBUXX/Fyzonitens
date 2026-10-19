@@ -1,9 +1,7 @@
-name: Build Fyzonitens Plugin
+name: Build Fyzonitens
 
 on:
   push:
-    branches: [ "main", "master" ]
-  pull_request:
     branches: [ "main", "master" ]
   workflow_dispatch:
 
@@ -12,20 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Baixar Código Fonte
+    - name: Checkout do Código
       uses: actions/checkout@v4
 
-    - name: Configurar Java 21 (JDK 21)
+    - name: Configurar JDK 21
       uses: actions/setup-java@v4
       with:
-        java-version: '21'
         distribution: 'temurin'
-        cache: 'maven'
+        java-version: '21'
 
-    - name: Compilar Plugin com Maven
-      run: mvn -B package --file pom.xml
+    - name: Compilar com Maven
+      run: mvn clean package -DskipTests
 
-    - name: Disponibilizar Ficheiro .jar para Download
+    - name: Guardar Ficheiro JAR
       uses: actions/upload-artifact@v4
       with:
         name: Fyzonitens-Plugin
