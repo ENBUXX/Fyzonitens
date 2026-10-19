@@ -29,7 +29,7 @@ public class PokebolaListener implements Listener {
     }
 
     @EventHandler
-    onPlayerInteractEntityEvent(PlayerInteractEntityEvent event) {
+    public void onPlayerInteractEntity(PlayerInteractEntityEvent event) {
         if (event.getHand() != EquipmentSlot.HAND) return;
         Player player = event.getPlayer();
         ItemStack item = player.getInventory().getItemInMainHand();
@@ -38,14 +38,13 @@ public class PokebolaListener implements Listener {
         if (!(event.getRightClicked() instanceof LivingEntity)) return;
         
         LivingEntity target = (LivingEntity) event.getRightClicked();
-        if (target instanceof Player) return; // Não capturar jogadores
+        if (target instanceof Player) return;
 
         event.setCancelled(true);
 
         String mobType = target.getType().name();
         target.remove();
 
-        // Guardar o tipo de mob na Pokebola (NADA COMPLEXO PARA GARANTIR COMPATIBILIDADE)
         ItemMeta meta = item.getItemMeta();
         if (meta != null) {
             meta.getPersistentDataContainer().set(mobKey, PersistentDataType.STRING, mobType);
@@ -73,7 +72,7 @@ public class PokebolaListener implements Listener {
 
         ItemMeta meta = item.getItemMeta();
         if (meta == null || !meta.getPersistentDataContainer().has(mobKey, PersistentDataType.STRING)) {
-            return; // Pokebola vazia
+            return;
         }
 
         event.setCancelled(true);
@@ -83,7 +82,6 @@ public class PokebolaListener implements Listener {
             org.bukkit.entity.EntityType type = org.bukkit.entity.EntityType.valueOf(mobType);
             player.getWorld().spawnEntity(player.getLocation().add(player.getLocation().getDirection().multiply(2)), type);
             
-            // Limpar a pokebola após soltar
             meta.getPersistentDataContainer().remove(mobKey);
             meta.setLore(new ArrayList<>());
             item.setItemMeta(meta);
