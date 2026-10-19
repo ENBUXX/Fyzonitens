@@ -1,0 +1,215 @@
+# Configuração do Plugin Fyzonitens
+
+efeitos:
+  ativar-particulas: true
+  ativar-sons: true
+
+sons:
+  sucesso-captura: "ENTITY_PLAYER_LEVELUP"
+  falha-captura: "ENTITY_ITEM_BREAK"
+  soltar-mob: "ENTITY_CHICKEN_EGG"
+  lançar-pokebola: "ENTITY_ENDER_PEARL_THROW"
+  linkar-funil: "BLOCK_CONDUIT_ACTIVATE"
+  selecionar-bau: "BLOCK_NOTE_BLOCK_PLING"
+  plantar-tnt: "BLOCK_NOTE_BLOCK_PLING"
+  quebrar-spawner: "BLOCK_ANVIL_USE"
+  quebrar-drusa: "BLOCK_AMETHYST_BLOCK_CHIME"
+
+opcoes-gerais:
+  mundos-proibidos-pokebola:
+    - "mundo_pvp_exemplo"
+
+picaretas-exclusivas:
+  exigir-permissao: true
+  permissoes:
+    spawner: "fyzonitens.picareta.spawner"
+    drusa: "fyzonitens.picareta.drusa"
+  apenas-dono-ou-vip: true
+
+gui:
+  titulo: "&8Menu do Fyzonitens &7(Admin)"
+  tamanho: 27
+  preencher-vazios: true
+  material-vazio: "LIGHT_GRAY_STAINED_GLASS_PANE"
+
+itens-gui:
+  comum:
+    slot: 10
+    material: EGG
+    nome: "&f&lPokebola Comum"
+    tier: "comum"
+  intermediaria:
+    slot: 12
+    material: SNOWBALL
+    nome: "&b&lSuper Ball"
+    tier: "intermediaria"
+  master:
+    slot: 14
+    material: HEART_OF_THE_SEA
+    nome: "&d&lMaster Ball"
+    tier: "master"
+  picareta-spawner:
+    slot: 16
+    material: DIAMOND_PICKAXE
+    nome: "&b&lPicareta de Spawner"
+  picareta-drusa:
+    slot: 18
+    material: DIAMOND_PICKAXE
+    nome: "&b&lPicareta de Drusa"
+  funil-chunk:
+    slot: 20
+    material: HOPPER
+    nome: "&6&lFunil de Chunk"
+  tnt-chunk:
+    slot: 22
+    material: TNT
+    nome: "&c&lTNT de Chunk"
+
+picareta-spawner:
+  inquebravel: true
+  nome: "&b&lPicareta de Spawner"
+  lore:
+    - "&8&m------------------------"
+    - "&7Ferramenta mística capaz de"
+    - "&7extrair a essência dos geradores."
+    - ""
+    - "&e▶ Funcionalidades:"
+    - "&7 • Recolhe spawners diretamente"
+    - "&7   para o seu inventário."
+    - "&7 • Preserva o tipo exato do mob."
+    - ""
+    - "&a⚡ Item especial de sobrevivência."
+    - "&8&m------------------------"
+  min-spawn-delay: 200
+  max-spawn-delay: 400
+
+picareta-drusa:
+  inquebravel: true
+  nome: "&b&lPicareta de Drusa"
+  lore:
+    - "&8&m------------------------"
+    - "&7Ferramenta delicada revestida"
+    - "&7com resina mágica."
+    - ""
+    - "&e▶ Funcionalidades:"
+    - "&7 • Extrai Drusas de Ametista"
+    - "&7   inteiras sem as estilhaçar."
+    - "&7 • Vai direto para o inventário."
+    - ""
+    - "&a⚡ Item especial de mineração."
+    - "&8&m------------------------"
+
+funil-chunk:
+  nome: "&6&lFunil de Chunk"
+  intervalo-segundos: 2
+  limite-por-chunk: 1
+  limite-vip: 3
+  lore:
+    - "&8&m------------------------"
+    - "&7Funil avançado automatizado."
+    - ""
+    - "&e▶ Funcionalidades:"
+    - "&7 • Puxa todos os itens caídos"
+    - "&7   na chunk inteira."
+    - "&7 • Linkável a um baú à distância"
+    - "&7   via clique direito."
+    - "&7 • Limite configurável por chunk."
+    - ""
+    - "&a⚡ Item de automação de base."
+    - "&8&m------------------------"
+
+tnt-chunk:
+  nome: "&c&lTNT de Chunk"
+  tempo-atraso-segundos: 5
+  camadas-por-tick: 16
+  deve-dropar-itens: false
+  efeito-camada: true
+  anunciar-no-chat: true
+  adicionar-brilho: true
+  mundos-proibidos:
+    - "mundo_spawn"
+  blocos-protegidos:
+    - "BEDROCK"
+    - "SPAWNER"
+    - "CHEST"
+    - "TRAPPED_CHEST"
+    - "ENDER_CHEST"
+    - "END_PORTAL"
+    - "END_PORTAL_FRAME"
+  lore:
+    - "&8&m------------------------"
+    - "&7Explosivos de alto impacto."
+    - ""
+    - "&e▶ Funcionalidades:"
+    - "&7 • Destrói uma chunk inteira."
+    - "&7 • Preserva Bedrock, Spawners e Baús."
+    - "&7 • Ativação: &eShift + Clique Direito&7."
+    - ""
+    - "&c⚡ Uso estritamente restrito."
+    - "&8&m------------------------"
+
+pokebolas:
+  comum:
+    material: EGG
+    nome: "&f&lPokebola Comum &7(Vazia)"
+    chance: 25.0
+    lore:
+      - "&7Tipo: &fComum"
+      - "&7Chance de captura: &a25%"
+      - "&7Atire num mob para capturá-lo!"
+      - "&c[Atenção] Se errar ou falhar, a pokebola some!"
+  intermediaria:
+    material: SNOWBALL
+    nome: "&b&lSuper Ball &7(Vazia)"
+    chance: 50.0
+    lore:
+      - "&7Tipo: &bIntermediária"
+      - "&7Chance de captura: &a50%"
+      - "&7Atire num mob para capturá-lo!"
+      - "&c[Atenção] Se errar ou falhar, a pokebola some!"
+  master:
+    material: HEART_OF_THE_SEA
+    nome: "&d&lMaster Ball &7(Vazia)"
+    chance: 100.0
+    lore:
+      - "&7Tipo: &dSuprema / Master"
+      - "&7Chance de captura: &a100% (Garantido)"
+      - "&7Atire num mob para capturá-lo!"
+      - "&c[Atenção] Se errar, a pokebola some!"
+
+item-cheia:
+  nome: "&b&lPokebola &e({mob})"
+  lore:
+    - "&7Contém: &f{mob}"
+    - "&7Vida: &c{vida} / {vida_max}"
+    - "&7Dono: &f{dono}"
+    - "&7Atire para libertar o mob."
+
+blacklist:
+  - ENDER_DRAGON
+  - WITHER
+  - PLAYER
+  - WARDEN
+
+mensagens:
+  config-recarregada: "&a[Fyzonitens] Configuração recarregada com sucesso!"
+  capturado: "&aVocê capturou um {mob} com sucesso!"
+  falhou: "&cO mob resistiu e escapou! A pokebola foi destruída."
+  bloqueado: "&cVocê não pode capturar este tipo de mob!"
+  solto: "&eVocê libertou o {mob}!"
+  ganhou: "&aVocê recebeu um item do Fyzonitens!"
+  cooldown: "&cVocê precisa de esperar {tempo} segundos para lançar outra pokebola!"
+  nao-dono: "&cEsta pokebola pertence a outro jogador! Você não pode abri-la."
+  bau-selecionado: "&a[Baú Link] Baú selecionado com sucesso nas coordenadas: X={x}, Y={y}, Z={z}!"
+  funil-linkado: "&a[Funil Link] Funil linkado ao baú à distância com sucesso!"
+  funil-sem-bau: "&c[Erro] Você precisa de selecionar um baú primeiro clicando nele com o botão direito!"
+  limite-atingido: "&c[Erro] Já atingiu o limite de Funis de Chunk permitidos nesta chunk!"
+  inventario-cheio: "&c[Aviso] O seu inventário estava cheio, o item foi dropado no chão."
+  mundo-proibido: "&c[Erro] Você não pode usar itens do Fyzonitens neste mundo!"
+  bau-invalido: "&c[Erro] O bloco selecionado não é um baú válido!"
+  funil-protegido: "&c[Erro] Este Funil de Chunk pertence a outro jogador e não pode ser partido!"
+  picareta-protegida: "&c[Erro] Esta picareta especial não é sua!"
+  sem-permissao-picareta: "&c[Erro] Você não tem permissão de VIP para utilizar esta picareta especial!"
+  tnt-plantada: "&c[TNT] TNT de Chunk plantada por {player}! Detonação em {tempo} segundos..."
+  tnt-ativada: "&4[TNT] A destruição da chunk começou!"
+  tnt-mundo-proibido: "&c[Erro] Você não pode detonar uma TNT de Chunk neste mundo!"
