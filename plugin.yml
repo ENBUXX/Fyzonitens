@@ -1,0 +1,26 @@
+name: Fyzonitens
+version: '1.0'
+main: com.enbuxx.fyzonitens.Fyzonitens
+api-version: '1.21'
+author: enbuxx
+description: Plugin completo de automação, proteção e utilidades especiais para ORIGEM MC.
+
+commands:
+  fyzon:
+    description: Comando principal para abrir a GUI e recarregar a configuração.
+    permission: fyzonitens.admin
+    usage: /fyzon [reload]
+
+permissions:
+  fyzonitens.admin:
+    description: Permite acesso ao menu e ao reload do plugin.
+    default: op
+  fyzonitens.vip:
+    description: Permite limites expandidos no Funil de Chunk.
+    default: false
+  fyzonitens.picareta.spawner:
+    description: Permite utilizar a Picareta de Spawner.
+    default: false
+  fyzonitens.picareta.drusa:
+    description: Permite utilizar a Picareta de Drusa.
+    default: false
