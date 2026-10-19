@@ -17,8 +17,11 @@ public final class Fyzonitens extends JavaPlugin implements Listener, CommandExe
     public void onEnable() {
         saveDefaultConfig();
         getServer().getPluginManager().registerEvents(this, this);
+        getServer().getPluginManager().registerEvents(new PokebolaListener(this), this);
         getCommand("fyzon").setExecutor(this);
-        getLogger().info("Fyzonitens ativado com sucesso para o ORIGEM MC!");
+        getLogger().info("Fyzonitens ativado com sucesso para o Pokebolas!");
+    }
+
     }
 
     @Override
